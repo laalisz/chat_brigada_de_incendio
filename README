@@ -1,0 +1,82 @@
+<h1 align="center">
+  <span style="color: #2563eb;">Sistema Especialista</span> | <span style="color: #d32f2f;">Brigada de Incêndio</span>
+</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Conclu%C3%ADdo-10b981?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/Licen%C3%A7a-MIT-2a3143?style=for-the-badge" alt="Licença" />
+  <img src="https://img.shields.io/badge/Vers%C3%A3o-1.0.0-2563eb?style=for-the-badge" alt="Versão" />
+</p>
+
+<br>
+
+<h2 style="color: #2563eb;">Sobre o Projeto</h2>
+
+Este projeto é uma solução digital interativa focada em automação de atendimento e segurança patrimonial. Trata-se de um chatbot desenvolvido para atuar como um Assistente Técnico Especialista em diretrizes da Brigada de Incêndio. O sistema tem como objetivo fornecer respostas rápidas, precisas e estruturadas sobre protocolos de emergência, evacuação e primeiros socorros.
+
+A interface foi projetada com foco em experiência do usuário e acessibilidade, simulando um ambiente de chat realístico com indicadores de digitação, validação de inputs e sugestões dinâmicas de navegação.
+
+<br>
+
+<h2 style="color: #2563eb;">Tecnologias e Ferramentas</h2>
+
+Abaixo estão listadas as tecnologias utilizadas na construção desta aplicação, garantindo uma arquitetura leve, sem dependências externas complexas para a lógica central.
+
+<p align="left">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white" alt="Font Awesome" />
+</p>
+
+<br>
+
+<h2 style="color: #2563eb;">Funcionalidades Principais</h2>
+
+* **Processamento de Linguagem Natural Local:** O sistema utiliza um motor de busca interno baseado em palavras-chave para identificar a intenção do usuário e retornar o protocolo correto.
+* **Base de Conhecimento Modular:** Arquitetura de dados separada da interface, facilitando manutenções, homologações e expansão dos guias de segurança.
+* **Navegação Guiada:** Geração dinâmica de botões de ação rápida para direcionar o usuário entre tópicos relacionados.
+* **Feedback Visual e UX:** Implementação de bloqueio temporal de formulário e animações de "digitando" para emular o processamento da resposta.
+* **Acessibilidade:** Suporte a leitores de tela integrado através de marcações de área e tags semânticas.
+
+<br>
+
+<h2 style="color: #2563eb;">Arquitetura de Dados</h2>
+
+O cérebro do chatbot está estruturado em um *array* de objetos JavaScript. Cada objeto representa um escopo de conhecimento técnico e possui três propriedades principais:
+
+1. **condicao:** Uma função que avalia as palavras digitadas pelo usuário.
+2. **resposta:** O retorno textual contendo a orientação técnica.
+3. **sugestoes:** Um *array* de *strings* que gera botões interativos para ramificar o atendimento.
+
+<br>
+
+<h2 style="color: #2563eb;">Como Executar o Projeto</h2>
+
+O projeto não requer instalação de pacotes via gerenciadores como NPM ou Yarn, pois utiliza JavaScript Vanilla.
+
+1. Faça o clone deste repositório em sua máquina local utilizando o comando:
+   `git clone https://github.com/seu-usuario/nome-do-repositorio.git`
+2. Navegue até a pasta do projeto.
+3. Abra o arquivo `index.html` em qualquer navegador web moderno.
+4. Interaja com o assistente clicando nas opções rápidas ou digitando sua dúvida no campo de texto.
+
+<br>
+
+<h2 style="color: #2563eb;">Escopo de Conhecimento Atual</h2>
+
+O assistente está homologado para responder sobre os seguintes cenários:
+
+* Protocolos de fumaça e intoxicação.
+* Identificação de classes de incêndio (A, B e C).
+* Instruções de manuseio de extintores e hidrantes.
+* Procedimentos de evacuação, rotas de fuga e ponto de encontro.
+* Orientação em casos de vazamento de gás e produtos químicos.
+* Primeiros socorros para queimaduras, fraturas, hemorragias e reanimação cardiopulmonar (RCP).
+
+<br>
+
+---
+<p align="center">
+  Desenvolvido com foco em soluções digitais e documentação técnica precisa.
+</p>
