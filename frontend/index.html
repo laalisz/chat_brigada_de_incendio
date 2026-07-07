@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Especialista | Brigada de Incêndio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="header-icon">
+        <i class="fa-solid fa-fire-extinguisher"></i>
+      </div>
+      <h2>BrigadaBot</h2>
+    </div>
+    
+    <div class="sidebar-menu">
+      <p class="menu-label">Módulos do Sistema</p>
+      <div class="menu-item active" data-target="view-chat">
+        <i class="fa-solid fa-message"></i> Assistente
+      </div>
+      <div class="menu-item" data-target="view-relatorios">
+        <i class="fa-solid fa-file-lines"></i> Relatórios
+      </div>
+      <div class="menu-item" data-target="view-equipe">
+        <i class="fa-solid fa-users"></i> Equipe
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <button id="themeToggle" class="theme-btn" aria-label="Alternar tema">
+        <i class="fa-solid fa-moon"></i> Trocar Tema
+      </button>
+    </div>
+  </aside>
+
+  <main class="chat-container">
+    <header class="chat-header">
+      <div class="header-info">
+        <h1 id="main-title">Suporte Operacional</h1>
+        <div class="status">
+          <span class="status-dot"></span>
+          Sistema Especialista Online
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <button id="btnLimpar" class="action-icon-btn" aria-label="Apagar histórico" title="Apagar Histórico">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
+    </header>
+
+    <div id="view-chat" class="view-content active">
+      <section id="chat" class="chat-box">
+        <div id="typingIndicator" class="message bot hidden">
+          <div class="avatar">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="bubble typing-bubble">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="input-area">
+        <div class="input-wrapper">
+          <textarea
+            id="mensagem"
+            aria-label="Campo de texto para descrever a ocorrência"
+            placeholder="Descreva a ocorrência ou digite o protocolo desejado..."
+            rows="1"
+          ></textarea>
+          <button id="btnEnviar" class="send-btn" aria-label="Enviar mensagem">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <div id="view-relatorios" class="view-content hidden">
+      <div class="module-container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <i class="fa-solid fa-comments"></i>
+            <div class="stat-info">
+              <h4 id="statTotalMensagens">0</h4>
+              <p>Mensagens Trocadas</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <div class="stat-info">
+              <h4 id="statUltimaAcao">--:--</h4>
+              <p>Última Atividade</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="report-actions">
+          <h3>Exportar Dados</h3>
+          <p class="helper-text">Baixe o registro completo de ocorrências e protocolos acionados para fins de auditoria e controle de qualidade.</p>
+          <button id="btnBaixarLog" class="primary-btn">
+            <i class="fa-solid fa-download"></i> Baixar Histórico de Logs (.txt)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-equipe" class="view-content hidden">
+      <div class="module-container">
+        <div class="team-controls">
+          <h3>Cadastrar Brigadista</h3>
+          <form id="formEquipe" class="form-row">
+            <input type="text" id="nomeMembro" placeholder="Nome Completo" required>
+            <select id="setorMembro" required>
+              <option value="" disabled selected>Selecione o Setor</option>
+              <option value="Administrativo">Administrativo</option>
+              <option value="Operacional">Operacional</option>
+              <option value="Tecnologia">Tecnologia</option>
+              <option value="Recursos Humanos">Recursos Humanos</option>
+            </select>
+            <button type="submit" class="primary-btn">Adicionar</button>
+          </form>
+        </div>
+
+        <div class="team-list-container">
+          <h3>Brigadistas Ativos</h3>
+          <div id="teamList" class="team-list">
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="database.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
