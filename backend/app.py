@@ -77,12 +77,10 @@ def chat():
         }), 500
 
 
-if __name__ == "__main__":
-    print("Servidor iniciado com sucesso, porta: 5000. Para testar use: http://localhost:5000")
-    app.run(debug=True, port=5000)
-    
-import os
 if __name__ == '__main__':
+    # Pega a porta definida pelo Render ou usa 5000 como padrão local
     port = int(os.environ.get('PORT', 5000))
-    print("Servidor iniciado com sucesso na porta", port)
+    print(f"Servidor iniciado com sucesso na porta {port}")
+    
+    # O host '0.0.0.0' é obrigatório para deploy em serviços de nuvem
     app.run(host='0.0.0.0', port=port)
